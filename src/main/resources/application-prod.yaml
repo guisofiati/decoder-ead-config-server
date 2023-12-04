@@ -1,0 +1,27 @@
+server:
+  port: ${PORT}
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/guisofiati/decoder-ead-config-server-repo
+          default-label: main
+#          username: guisofiati
+#          password: *
+encrypt:
+  key: 3rK5VjkNEcuu6iMDT00aMNW1F1SykoLy8EDXU8QuVkl8dmw3RkDA7OiXBxSsvVeesSsqDY2ggbdHK8F4K5icjkITvfE9ebZFI5iAQsrqhtZCbhKd19n7zIj4Fs3oVl7fUg8wVxomR3urGJNFaOBCyHThYgpewY8GXDYlsJKbiyuVk90ea7FmPvYZek1p1xcQd6mvwC3GHERmfe6Zn6T9tICqF9ZkVk0LsuvSLzRiI8Q5NfD8MaT1mWpH37c2uXA27zdTrWTSgsuCON2HZYJwPdZboonhOXeDGwY5L70Cba5LYKvbZIoWBlqHhtzGYLWJRCpAGTUEkUEjrPQpfqZz7RKuyzVzsLyz8QmpHGSp79ihZUDuUcKEMO2I3tH8IJw1Ok4OL7yGTOAmXzQz6JSEzaxvbzJJOwpNhBCpHqXEGP4Gn69C9cShgjm5lJa4fIJBUuBjYdeTPVK5xQLafpl13FxdSHzb244kfZyTO2KrlW4JOUYVXShc8o5xxr96WcTM
+
+ead:
+  configServer:
+    username: ${CONFIG_SERVER_USERNAME}
+    password: ${CONFIG_SERVER_PASSWORD}
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URL}
+  instance:
+    hostname: ${APP_DOMAIN_NAME}
+    non-secure-port: 80
